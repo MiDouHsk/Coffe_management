@@ -1,0 +1,36 @@
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.AssemblyReference.cache
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fAccountProfile.resources
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fAdmin.resources
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fLogin.resources
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fTableManager.resources
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.Properties.Resources.resources
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.GenerateResource.cache
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.CoreCompileInputs.cache
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\QuanLyQuanCafe.exe.config
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\QuanLyQuanCafe.exe
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\QuanLyQuanCafe.pdb
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\Microsoft.ReportViewer.Common.dll
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\Microsoft.ReportViewer.WinForms.dll
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.CopyComplete
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.exe
+D:\DotNet\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.pdb
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\QuanLyQuanCafe.exe.config
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\QuanLyQuanCafe.exe
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\QuanLyQuanCafe.pdb
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\Microsoft.ReportViewer.Common.dll
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\Microsoft.ReportViewer.DataVisualization.dll
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\bin\Release\Microsoft.ReportViewer.WinForms.dll
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.AssemblyReference.cache
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fAccountProfile.resources
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fAdmin.resources
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fLogin.resources
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.fTableManager.resources
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.Properties.Resources.resources
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.GenerateResource.cache
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.CoreCompileInputs.cache
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csproj.CopyComplete
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.exe
+D:\.Net\Phần mềm Quản Lý Quán Cafe\Phần mềm Quản Lý Quán Cafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.pdb

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyQuanCafe" Class="QuanLyQuanCafeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ADMIN-PC\SQLEXPRESS;Initial Catalog=QuanLyQuanCafe;Persist Security Info=True;User ID=sa;Trust Server Certificate=True" SettingsObjectName="QuanLyQuanCafe.Properties.Settings" SettingsPropertyName="QuanLyQuanCafeConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PassWord" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bill" Member="Bills">
+    <Type Name="Bill">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DateCheckIn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DateCheckOut" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="idTable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Bill_BillInfo" Member="BillInfos" ThisKey="id" OtherKey="idBill" Type="BillInfo" />
+      <Association Name="TableFood_Bill" Member="TableFood" ThisKey="idTable" OtherKey="id" Type="TableFood" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BillInfo" Member="BillInfos">
+    <Type Name="BillInfo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idBill" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idFood" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Bill_BillInfo" Member="Bill" ThisKey="idBill" OtherKey="id" Type="Bill" IsForeignKey="true" />
+      <Association Name="Food_BillInfo" Member="Food" ThisKey="idFood" OtherKey="id" Type="Food" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Food" Member="Foods">
+    <Type Name="Food">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Food_BillInfo" Member="BillInfos" ThisKey="id" OtherKey="idFood" Type="BillInfo" />
+      <Association Name="FoodCategory_Food" Member="FoodCategory" ThisKey="idCategory" OtherKey="id" Type="FoodCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FoodCategory" Member="FoodCategories">
+    <Type Name="FoodCategory">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="FoodCategory_Food" Member="Foods" ThisKey="id" OtherKey="idCategory" Type="Food" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableFood" Member="TableFoods">
+    <Type Name="TableFood">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TableFood_Bill" Member="Bills" ThisKey="id" OtherKey="idTable" Type="Bill" />
+    </Type>
+  </Table>
+  <Function Name="dbo.USP_GetAccountByUserName" Method="USP_GetAccountByUserName">
+    <Parameter Name="userName" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="USP_GetAccountByUserNameResult">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PassWord" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetListBillByDate" Method="USP_GetListBillByDate">
+    <Parameter Name="checkIn" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="checkOut" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="USP_GetListBillByDateResult">
+      <Column Name="[Tên bàn]" Member="Tên_bàn" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tổng tiền]" Member="Tổng_tiền" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Ngày vào]" Member="Ngày_vào" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Ngày ra]" Member="Ngày_ra" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Giảm giá]" Member="Giảm_giá" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetListBillByDateAndPage" Method="USP_GetListBillByDateAndPage">
+    <Parameter Name="checkIn" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="checkOut" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="page" Type="System.Int32" DbType="Int" />
+    <ElementType Name="USP_GetListBillByDateAndPageResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Tên bàn]" Member="Tên_bàn" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tổng tiền]" Member="Tổng_tiền" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Ngày vào]" Member="Ngày_vào" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Ngày ra]" Member="Ngày_ra" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Giảm giá]" Member="Giảm_giá" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetListBillByDateForReport" Method="USP_GetListBillByDateForReport">
+    <Parameter Name="checkIn" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="checkOut" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="USP_GetListBillByDateForReportResult">
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="totalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DateCheckIn" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DateCheckOut" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetNumBillByDate" Method="USP_GetNumBillByDate">
+    <Parameter Name="checkIn" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="checkOut" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="USP_GetNumBillByDateResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_GetTableList" Method="USP_GetTableList">
+    <ElementType Name="USP_GetTableListResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_InsertBill" Method="USP_InsertBill">
+    <Parameter Name="idTable" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_InsertBillInfo" Method="USP_InsertBillInfo">
+    <Parameter Name="idBill" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idFood" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.USP_Login" Method="USP_Login">
+    <Parameter Name="userName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="passWord" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="USP_LoginResult">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PassWord" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USP_UpdateAccount" Method="USP_UpdateAccount">
+    <Parameter Name="userName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="displayName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="password" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="newPassword" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
